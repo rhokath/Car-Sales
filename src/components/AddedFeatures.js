@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-
+import {removeFeature} from '../actions';
 import AddedFeature from './AddedFeature';
 
 const AddedFeatures = props => {
@@ -10,7 +10,7 @@ const AddedFeatures = props => {
       {props.carOnProps.features.length ? (
         <ol type="1">
           {props.carOnProps.features.map(item => (
-            <AddedFeature key={item.id} feature={item} />
+            <AddedFeature key={item.id} removeFeature={removeFeature}feature={item} />
           ))}
         </ol>
       ) : (
